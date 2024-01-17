@@ -12,11 +12,17 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Scorecard {
-    
+
+    private static final int DEFAULT_SCORE = 10;
+
     @Id
     @jakarta.persistence.GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     
     private long rank;
+
+   {
+     this.rank = DEFAULT_SCORE;
+   }
 
 }

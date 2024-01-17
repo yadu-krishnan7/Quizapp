@@ -21,6 +21,8 @@ public class LeaderBoard {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    private String userAlias;
+
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "score_id")
     private Scorecard scorecard;

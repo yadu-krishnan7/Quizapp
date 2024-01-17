@@ -18,7 +18,5 @@ public class BadgeCard {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long badgeId;
 
-    private Long userId;    
-
     private BadgeType badgeType;
 }
