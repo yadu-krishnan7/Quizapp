@@ -12,6 +12,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
+import jakarta.persistence.OneToOne;
 //import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
@@ -37,7 +38,7 @@ public class Question{
     private List<Option> options;
     
     //should only relate with foreign key
-    // @OneToOne(mappedBy = "question", fetch = FetchType.LAZY)
-    // private Answer answer;
+    @OneToOne(mappedBy = "question", fetch = FetchType.LAZY)
+    private Answer answer;
     
 }

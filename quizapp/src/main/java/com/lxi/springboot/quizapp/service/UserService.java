@@ -24,7 +24,7 @@ public class UserService {
          User user = userRepository.findByUserName(userDTO.userName())
          .orElseGet( () ->{
             log.info("Creating new user with alias {}",userDTO.userName());
-                 return userRepository.save(new User(null,userDTO.userName(),0));
+                 return userRepository.save(new User(null,userDTO.userName()));
 
          }
          );

@@ -27,7 +27,7 @@ public class Answer{
     @Column(name = "answer_text")
     private String answer;
 
-    // @OneToOne
-    // @JoinColumn(name = "questions_id",referencedColumnName = "id")
-    // private Question question;
+    @OneToOne
+    @JoinColumn(name = "questions_id",referencedColumnName = "id")
+    private Question question;
 }

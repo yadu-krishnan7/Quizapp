@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.lxi.springboot.quizapp.model.AttemptDTO;
 import com.lxi.springboot.quizapp.model.Question;
-import com.lxi.springboot.quizapp.model.QuestionDTO;
 import com.lxi.springboot.quizapp.service.AttemptService;
 
 @RestController
@@ -27,10 +26,10 @@ public class AttemptController {
     return attemptService.getAllQuestions();
     }
 
-    // @PostMapping("/postanswer")
-    // public String attempts(@RequestBody AttemptDTO attemptDTO){
-    //     return attemptService.attempts(attemptDTO);
-    // }
+    @PostMapping("/postanswer")
+    public String attempts(@RequestBody AttemptDTO attemptDTO){
+        return attemptService.attempts(attemptDTO);
+    }
 
     
 }
