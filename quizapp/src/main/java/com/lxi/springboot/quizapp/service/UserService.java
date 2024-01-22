@@ -1,7 +1,5 @@
 package com.lxi.springboot.quizapp.service;
 
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 import com.lxi.springboot.quizapp.model.User;
@@ -31,12 +29,12 @@ public class UserService {
          return user;
     }
 
-    public Page<User> getTopTen(){
-        long totalUsers = userRepository.count();
+    // public Page<User> getTopTen(){
+    //     long totalUsers = userRepository.count();
 
-        int fetch = Math.min(10,(int)totalUsers);
+    //     int fetch = Math.min(10,(int)totalUsers);
 
-        PageRequest pageRequest = PageRequest.of(0, fetch);
-            return userRepository.findAllByOrderByRanksDesc(pageRequest);
-    }
+    //     PageRequest pageRequest = PageRequest.of(0, fetch);
+    //         return userRepository.findAllByOrderByRanksDesc(pageRequest);
+    // }
 }

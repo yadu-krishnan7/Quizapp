@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.lxi.springboot.quizapp.model.AttemptDTO;
-import com.lxi.springboot.quizapp.model.Question;
+import com.lxi.springboot.quizapp.model.QuestionDTO;
 import com.lxi.springboot.quizapp.service.AttemptService;
 
 @RestController
@@ -22,7 +22,7 @@ public class AttemptController {
    }
 
    @GetMapping("/questions")
-    public List<Question> getAllQuestions(){
+    public List<QuestionDTO> getAllQuestions(){
     return attemptService.getAllQuestions();
     }
 

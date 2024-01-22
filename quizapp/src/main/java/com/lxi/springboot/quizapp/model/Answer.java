@@ -5,8 +5,6 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -24,10 +22,8 @@ public class Answer{
     @Column(name = "answer_id")
     private Long id;
 
-    @Column(name = "answer_text")
-    private String answer;
+    
+    private String correct;
 
-    @OneToOne
-    @JoinColumn(name = "questions_id",referencedColumnName = "id")
-    private Question question;
+    
 }

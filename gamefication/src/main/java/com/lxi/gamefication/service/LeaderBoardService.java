@@ -4,7 +4,7 @@ import org.springframework.stereotype.Service;
 
 import com.lxi.gamefication.model.BadgeCard;
 import com.lxi.gamefication.model.BadgeType;
-import com.lxi.gamefication.model.ChallengeSolvedDTO;
+import com.lxi.gamefication.model.ChallengeSolvedEvent;
 import com.lxi.gamefication.model.LeaderBoard;
 import com.lxi.gamefication.model.Scorecard;
 import com.lxi.gamefication.repository.LeaderBoardRepo;
@@ -18,11 +18,11 @@ public class LeaderBoardService {
         this.leaderBoardRepo = leaderBoardRepo;
     }
 
-    public String saveScore(ChallengeSolvedDTO challengeSolvedDTO){
+    public String saveScore(ChallengeSolvedEvent challengeSolvedDTO){
         LeaderBoard leaderBoard = new LeaderBoard();
         Scorecard scorecard = new Scorecard();
         BadgeCard badgeCard = new BadgeCard();
-        badgeCard.setBadgeType(BadgeType.BRONZE);
+        badgeCard.setBadgeType(BadgeType.BRONZE.getDescription());
         leaderBoard.setUserAlias(challengeSolvedDTO.getUserAlias());
         leaderBoard.setScorecard(scorecard);
         leaderBoard.setBadgeCard(badgeCard);

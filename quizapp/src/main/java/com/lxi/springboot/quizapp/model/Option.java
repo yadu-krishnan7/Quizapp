@@ -1,14 +1,11 @@
 package com.lxi.springboot.quizapp.model;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -18,7 +15,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "Options")
+@Table(name = "options")
 public class Option {
     
     @Id
@@ -26,11 +23,14 @@ public class Option {
     @Column(name = "option_id")
     private Long id;
 
-    @Column(name = "option_text")
-    private String option;
+    @Column(name = "OptionA")
+    private String optionA;
 
-    @ManyToOne
-    @JoinColumn(name = "questions_id", referencedColumnName = "id")
-    @JsonBackReference
-    private Question question;
+    @Column(name = "OptionB")
+    private String optionB;
+
+    @Column(name = "OptionC")
+    private String optionC;
+
+    
 }

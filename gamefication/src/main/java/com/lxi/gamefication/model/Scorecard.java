@@ -19,10 +19,10 @@ public class Scorecard {
     @jakarta.persistence.GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     
-    private long rank;
+    private long rankList;
 
    {
-     this.rank = DEFAULT_SCORE;
+     this.rankList = DEFAULT_SCORE;
    }
 
 }

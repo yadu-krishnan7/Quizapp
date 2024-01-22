@@ -2,12 +2,9 @@ package com.lxi.springboot.quizapp.restcontroller;
 
 import org.springframework.web.bind.annotation.RestController;
 
-import com.lxi.springboot.quizapp.model.User;
 import com.lxi.springboot.quizapp.model.UserDTO;
 import com.lxi.springboot.quizapp.service.UserService;
 
-import org.springframework.data.domain.Page;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
@@ -27,8 +24,8 @@ public class UserController {
     }
 
 
-     @GetMapping("/topPerformers")
-    public Page<User> getTopPerformers() {
-        return userService.getTopTen();
-    }
+    //  @GetMapping("/topPerformers")
+    // public Page<User> getTopPerformers() {
+    //     return userService.getTopTen();
+    // }
 }

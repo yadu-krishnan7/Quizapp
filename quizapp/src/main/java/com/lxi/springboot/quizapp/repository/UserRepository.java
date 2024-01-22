@@ -2,8 +2,6 @@ package com.lxi.springboot.quizapp.repository;
 
 import java.util.Optional;
 
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 
 
 import org.springframework.data.repository.CrudRepository;
@@ -17,5 +15,4 @@ public interface UserRepository extends PagingAndSortingRepository<User,Long>,Cr
 
     public boolean existsByUserName(String userName);
 
-    Page<User> findAllByOrderByRanksDesc(Pageable pageable);
 }
