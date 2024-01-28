@@ -1,0 +1,31 @@
+server:
+ port: 8000
+spring:
+ application:
+   name: gateway
+ cloud:
+  gateway:
+  routes:
+   - id: quizapp
+     uri: http://localhost:8080/
+     predicates:
+      - Path=/quiz/**,/user/**
+   - id: gamification
+     uri: http://localhost:8081/
+     predicates:
+      - Path=/gamefeature/
+  compatibility-verifier:
+      enabled: false
+  globalcors:
+        cors-configurations:
+          '[/**]':
+            allowedOrigins: "http://localhost:3000"
+            allowedHeaders:
+              - "*"
+            allowedMethods:
+              - "GET"
+              - "POST"
+              - "OPTIONS"
+        default-filters:
+          - DedupeResponseHeader=Access-Control-Allow-Origin, RETAIN_UNIQUE
+
