@@ -12,14 +12,14 @@ spring:
    discovery:
     query-passing: true
   gateway:
-  routes:
-   - id: quizapp
-     uri: http://localhost:8080/
-     predicates:
+    routes:
+    - id: quizapp
+      uri: http://localhost:8080/
+      predicates:
       - Path=/quiz/**,/user/**
-   - id: gamification
-     uri: http://localhost:8081/
-     predicates:
+    - id: gamification
+      uri: http://localhost:8081/
+      predicates:
       - Path=/gamefeature/
   compatibility-verifier:
       enabled: false
